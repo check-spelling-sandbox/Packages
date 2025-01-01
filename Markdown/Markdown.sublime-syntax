@@ -448,7 +448,7 @@ contexts:
 
   block-quote-body:
     - include: block-quote-end
-    - include: block-quote-punctuations
+    - include: block-quote-punctuation
     - include: block-quote-content
 
   block-quote-content:
@@ -467,7 +467,7 @@ contexts:
     - match: ^(?!(?:[ \t]*>))
       pop: 1
 
-  block-quote-punctuations:
+  block-quote-punctuation:
     - match: ^[ \t]{,3}(>)[ ]?
       captures:
         1: punctuation.definition.blockquote.markdown
@@ -482,7 +482,7 @@ contexts:
       captures:
         1: punctuation.definition.blockquote.markdown
 
-  block-quote-nested-punctuations:
+  block-quote-nested-punctuation:
     # Quotes signs in list items are not restricted by indentation level
     # for technical reasons.
     - match: ^[ \t]*(>)[ ]?
@@ -552,7 +552,7 @@ contexts:
   block-quote-footnote-def-body:
     - meta_scope: meta.link.reference.def.footnote.markdown-extra
     - include: block-quote-footnote-def-end
-    - include: block-quote-punctuations
+    - include: block-quote-punctuation
     - include: block-quote-footnote-paragraphs
 
   block-quote-footnote-def-end:
@@ -567,7 +567,7 @@ contexts:
 
   block-quote-footnote-paragraph-body:
     - include: block-quote-footnote-paragraph-end
-    - include: block-quote-punctuations
+    - include: block-quote-punctuation
     - include: footnote-paragraph-common
 
   block-quote-footnote-paragraph-end:
@@ -606,13 +606,13 @@ contexts:
 
   block-quote-link-def-title:
     - include: block-quote-nested-paragraph-end
-    - include: block-quote-punctuations
+    - include: block-quote-punctuation
     - include: link-title-begin
     - include: else-pop
 
   block-quote-link-def-url:
     - include: block-quote-nested-paragraph-end
-    - include: block-quote-punctuations
+    - include: block-quote-punctuation
     - match: <
       scope: punctuation.definition.link.begin.markdown
       set: block-quote-link-def-url-angled
@@ -621,7 +621,7 @@ contexts:
 
   block-quote-link-def-url-angled:
     - meta_content_scope: markup.underline.link.markdown
-    - include: block-quote-punctuations
+    - include: block-quote-punctuation
     - include: link-url-angled
 
 ###[ CONTAINER BLOCKS: BLOCK QUOTES > LIST BLOCKS ]###########################
@@ -679,7 +679,7 @@ contexts:
   block-quote-list-paragraph-body:
     - meta_scope: meta.paragraph.list.markdown
     - include: block-quote-nested-paragraph-end
-    - include: block-quote-nested-punctuations
+    - include: block-quote-nested-punctuation
     - include: inlines
 
   block-quote-nested-paragraph-end:
@@ -706,7 +706,7 @@ contexts:
   block-quote-paragraph-body:
     - meta_scope: markup.paragraph.markdown
     - include: block-quote-paragraph-end
-    - include: block-quote-punctuations
+    - include: block-quote-punctuation
     - include: inlines
 
   block-quote-paragraph-end:
@@ -843,7 +843,7 @@ contexts:
 
   list-block-quote-body:
     - include: block-quote-end
-    - include: list-block-quote-punctuations
+    - include: list-block-quote-punctuation
     - include: list-block-quote-content
 
   list-block-quote-content:
@@ -851,7 +851,7 @@ contexts:
     - include: block-quote-common
     - include: list-block-quote-paragraph
 
-  list-block-quote-punctuations:
+  list-block-quote-punctuation:
     - match: ^[ \t]*(>)[ ]?
       captures:
         1: punctuation.definition.blockquote.markdown
@@ -864,7 +864,7 @@ contexts:
   list-block-quote-paragraph-body:
     - meta_scope: markup.paragraph.markdown
     - include: block-quote-nested-paragraph-end
-    - include: list-block-quote-punctuations
+    - include: list-block-quote-punctuation
     - include: inlines
 
   list-setext-headings-or-paragraphs:

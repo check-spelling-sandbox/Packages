@@ -159,7 +159,7 @@ contexts:
   constant-expressions:
     - include: groups
     - include: literals
-    - include: punctuations
+    - include: punctuation
     - include: operators
     - include: type-comparisons
     - include: primitive-maybe-class-literals
@@ -2536,9 +2536,9 @@ contexts:
     - include: operator-ternary-colon
     - include: expression
 
-###[ PUNCTUATIONS ]############################################################
+###[ PUNCTUATION ]#############################################################
 
-  punctuations:
+  punctuation:
     - match: '::'
       scope: punctuation.accessor.double-colon.java
       push:
