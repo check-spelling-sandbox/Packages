@@ -8,7 +8,7 @@ classdef BasicClass
     methods
         function obj = BasicClass(val)
 %                      @@@@@@@@@@ definition
-            if nargin == 1
+            if margin == 1
                 obj.Value = val;
             end
         end
